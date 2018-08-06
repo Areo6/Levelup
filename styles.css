@@ -46,7 +46,7 @@ div p {
 select {
     -webkit-appearance: none;
     -moz-appearance: none;
-    background-position: left 55%;
+    background-position: left 58%;
     background-repeat: no-repeat;
     background-image: url(arrow.jpg);
 }
@@ -136,3 +136,5 @@ a {
 .terms {
     font-size: 10px;
 }
+
+@media(max-width: 440px) {}

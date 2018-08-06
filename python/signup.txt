@@ -1,0 +1,9 @@
+                                        UBER's USER DETAILS                                         
+                                       ---------------------                                        
+
+
+First Name = 
+Surname = Mashauri
+Phone Number = 0750655389
+Email = eubulemalaba@gmail.com
+Password = mypass
