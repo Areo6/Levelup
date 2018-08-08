@@ -36,10 +36,10 @@ div p {
     border-style: solid;
     border-color: rgb(230, 221, 221);
     border-width: 1px;
-    margin-top: 0px;
+    margin-top: 1px;
     height: 49px;
     background-color: white;
-    padding-left: 7px;
+    padding-left: 11px;
     color: black;
 }
 
@@ -61,7 +61,7 @@ select {
     display: flex;
     height: 45px;
     border-width: 0px;
-    margin-top: 10px;
+    margin-top: 8px;
     margin-bottom: 21px;
 }
 

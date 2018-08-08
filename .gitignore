@@ -3,3 +3,4 @@
 .directory
 .nfs*
 .fuse_hidden*
+venv/

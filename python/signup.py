@@ -1,3 +1,6 @@
+import re
+import os
+
 class Signup(object):
     """Object representation of the Uber signup page"""
 
@@ -7,6 +10,8 @@ class Signup(object):
         self.phone_num = 0
         self.e_mail = ""
         self.pass_word = ""
+        self.done = False
+        file = self.create_user_file()
     
     def menu(self):
         #Displays the menu for the menu for Uber signup page
@@ -47,72 +52,119 @@ class Signup(object):
         header = """                         Sign up to ride
                 Safe, reliable trips in minutes"""
         print(header)
-        prompt = """        
-            (F)ist Name
-            s(U)rname
-            (P)hone Number
-            (E)mail
-            p(A)ssword
-            (S)ave
+        prompt = """  
+
+            (A)dd User
+            (S)ee users
+            (Q)uit
             
-        Enter Your choice:"""
-        done = False 
-        while not done:
+        Enter Your choice:""" 
+
+        while not self.done:
             chosen = False
             while not chosen:
                 try:
                     choice = input(prompt).strip()[0].lower()
                 except (KeyboardInterrupt, EOFError):
                     choice = 'q'
-                if choice not in("fupeas"):
+                if choice not in("asq"):
                     print("Wrong choice...Please chose again.")
                 else:
                     chosen = True
-            if choice == "f": self.firstname()
-            if choice == "u": self.surname()
-            if choice == "p": self.phone()
-            if choice == "e": self.email()
-            if choice == "a": self.password()
-            if choice == "s": 
-                f = open("signup.txt",'w')
-                f.write("UBER's USER DETAILS".center(100))
-                f.write("\n" + "---------------------".center(100))
-                f.write("\n\n\n" + "First Name = " + self.f_name)
-                f.write("\n" + "Surname = " + self.s_name)
-                f.write("\n" + "Phone Number = " + self.phone_num)
-                f.write("\n" + "Email = " + self.e_mail)
-                f.write("\n" + "Password = " + self.pass_word)
-                f.close()
-                done = True
+            if choice == "a": self.firstname()
+            if choice == "s": self.display_users()
+            if choice == "q": self.done = True
         
     def firstname(self):
-        self.f_name = input("First Name:  ").strip()
+        # To input first name
+        valid = False
+        while not valid:
+            self.f_name = input("First Name :  ").strip()
+            if self.f_name == "":
+                print("Fist name can't be empty, Try again.")
+            else:
+                valid = True
+        self.surname()
 
     def surname(self):
-        self.s_name = input("Surname:  ").strip()
+        # To input Surname
+        valid = False
+        while not valid:
+            self.s_name = input("Surname :  ").strip()
+            if self.s_name == "":
+                print("Surnamecan't be empty. Please try again.")
+            else:
+                valid = True
+        self.phone()
         
     def phone(self):
-        done = False
-        while not done:
-            self.phone_num = input("Phone Number:  ").strip()
+        finish = False
+        while not finish:
+            try:
+                self.phone_num = int(input("Phone Number :  ").strip())
+            except (Exception):
+                print("Numbers only allowed. Try again.")
+                continue
             phone_str = str(self.phone_num)
             if phone_str[0] != "0":
-                print(phone_str+"Phone number should biggin with 0. Try again")
+                print("Phone number should biggin with 0. Try again")
                 continue
             if len(phone_str) != 10:
                 print("Phone number should be 10 diggits.")
                 continue
             try:
                 int(self.phone_num)
-                done = True
+                finish = True
             except Exception:
                 print("Only numeric values allowed")
+        self.email()
 
     def email(self):
-        self.e_mail = input("Email:  ").strip()
+        finish = False
+        while not finish:
+            self.e_mail = input("Email :  ").strip()
+            is_valid = re.search(r"[\w-]+@[\w.-]+\.+", self.e_mail)
+            if is_valid:
+                finish = True
+                self.password()
+            else:
+                print("Wrong email. Please try again")
 
     def password(self):
-        self.pass_word = input("Password:  ").strip()
+        self.pass_word = input("Password :  ").strip()
+        popup = input("Save? y/n : ").strip()[0].lower()
+        if popup ==  "y":
+            self.save()
+        else:
+            pass
+    
+    @staticmethod
+    def create_user_file():
+        if not os.path.exists("signup.txt"):
+            f = open("signup.txt",'w')
+            f.write("UBER's USER DETAILS".center(100))
+            f.close()
+        
+    def save(self):
+        f = open("signup.txt",'a')
+        f.write("\n" + "---------------------".center(100))
+        f.write("\n\n" + "First Name = " + self.f_name)
+        f.write("\n" + "Surname = " + self.s_name)
+        f.write("\n" + "Phone Number = " + self.phone_num)
+        f.write("\n" + "Email = " + self.e_mail)
+        f.write("\n" + "Password = " + self.pass_word)
+        f.close()
+
+    def display_users(self):
+        try:
+            f = open("signup.txt",'r')
+        except (IOError, e):
+            print("Sorry, couldn't open file.")
+        else:
+            for line in f:
+                print(line, end = " ")
+            
+        f.close()
 
 if __name__ == "__main__":
     signup = Signup()

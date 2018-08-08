@@ -2,8 +2,16 @@
                                        ---------------------                                        
 
 
-First Name = 
+First Name = eric
+Surname = malaba
+Phone Number = 0987654321
+Email = eric@gmail.com
+Password = eric
+                                       ---------------------                                        
+
+
+First Name = Eubule
 Surname = Mashauri
 Phone Number = 0750655389
-Email = eubulemalaba@gmail.com
-Password = mypass
+Email = eubule@gmail.com
+Password = eubule
