@@ -49,5 +49,7 @@ class User():
             password = str(password).strip()
             self.password = password
         return password
-            
+
+if __name__ == "__main__":
+    user = User()
     
