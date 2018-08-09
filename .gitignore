@@ -5,3 +5,4 @@
 .fuse_hidden*
 venv/
 .__pycash__/
+.coverage
