@@ -36,17 +36,17 @@ div p {
     border-style: solid;
     border-color: rgb(230, 221, 221);
     border-width: 1px;
-    margin-top: 1px;
+    margin-top: 0px;
     height: 49px;
     background-color: white;
-    padding-left: 11px;
+    padding-left: 7px;
     color: black;
 }
 
 select {
     -webkit-appearance: none;
     -moz-appearance: none;
-    background-position: left 58%;
+    background-position: left 55%;
     background-repeat: no-repeat;
     background-image: url(arrow.jpg);
 }
@@ -61,7 +61,7 @@ select {
     display: flex;
     height: 45px;
     border-width: 0px;
-    margin-top: 8px;
+    margin-top: 10px;
     margin-bottom: 21px;
 }
 
@@ -136,5 +136,3 @@ a {
 .terms {
     font-size: 10px;
 }
-
-@media(max-width: 440px) {}
