@@ -1,0 +1,138 @@
+html {
+    background: rgb(250, 247, 247);
+}
+
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.content {
+    width: 440px;
+    margin: 0 auto;
+    /* margin-left: 1em; */
+}
+
+.titles {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.signup-title {
+    font-size: 30px;
+    font-weight: lighter;
+}
+
+div p {
+    margin: 0.5em;
+}
+
+.sub-title {
+    font-size: 1.3em;
+}
+
+#code {
+    width: 50px;
+    margin-left: 0px;
+    border-style: solid;
+    border-color: rgb(230, 221, 221);
+    border-width: 1px;
+    margin-top: 0px;
+    height: 49px;
+    background-color: white;
+    padding-left: 7px;
+    color: black;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-position: left 55%;
+    background-repeat: no-repeat;
+    background-image: url(arrow.jpg);
+}
+
+#phone {
+    width: 380px;
+    height: 45px;
+    margin-top: 0px;
+}
+
+.code-phone {
+    display: flex;
+    height: 45px;
+    border-width: 0px;
+    margin-top: 10px;
+    margin-bottom: 21px;
+}
+
+input {
+    display: block;
+    border-style: solid;
+    border-color: rgb(230, 221, 221);
+    border-width: 1px;
+    border-radius: 0px;
+    background: white;
+    height: 45px;
+    padding-left: 20px;
+    font-size: 18px;
+    font-weight: lighter;
+    margin-top: 10px;
+    width: 98%;
+}
+
+.names {
+    display: flex;
+}
+
+.first-name {
+    width: 96%;
+}
+
+.firstname {
+    margin-left: 0;
+    width: 48%;
+    margin-right: 20px;
+    /* float: left; */
+}
+
+.surname {
+    margin-right: 0px;
+    width: 48%;
+    /* float: left; */
+}
+
+label {
+    font-size: 0.75em;
+}
+
+.spacing {
+    margin-bottom: 20px;
+}
+
+#submit {
+    width: 440px;
+    padding-left: 40px;
+    text-align: left;
+    font-weight: bolder;
+    color: white;
+    background: teal;
+    margin-top: 30px;
+    border-color: teal;
+}
+
+.password-space {
+    margin-bottom: 30px;
+}
+
+.promo {
+    color: teal;
+}
+
+a {
+    text-decoration-line: none;
+    color: teal;
+}
+
+.terms {
+    font-size: 10px;
+}

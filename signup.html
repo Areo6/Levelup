@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Uber</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <div class="content">
+        <div class="titles">
+            <img src="uber.png" alt="Uber">
+            <p class="signup-title">Sign up to ride</p>
+            <p class="sub-title">Safe, reliable trips in minutes</p>
+        </div>
+        <form>
+            <div class="names spacing">
+                <div class="firstname">
+                    <label for="firstname">First name(required)</label>
+                    <input id="first-name" class="first-name" type="text" name="firstname" placeholder="First name" required>
+                </div>
+                <div class="surname">
+                    <label for="surname">Surname(required)</label>
+                    <input class="first-name" type="text" name="surname" placeholder="Surname" required>
+                </div>
+            </div>
+            <section class="other-details">
+                <div class="spacing">
+                    <label class="margin-space" for="phone">Enter your phone number(required)</label>
+                    <div class="code-phone">
+                        <div>
+                            <select name="country-code" id="code">
+                            <option value="uganda">+256 &ensp;  Uganda</option>
+                            <option value="congo">+243 &ensp; Congo(Democratic Republic)</option>
+                            <option value="kenya">+254  &ensp; Kenya</option>
+                            <option value="rwanda">+250  &ensp;  Rwanda</option>
+                            <option value="tanzania">+255  &ensp; Tanzania</option>
+                        </select>
+                        </div>
+                        <div>
+                            <input class="inputs" id="phone" type="tel" name="surname" placeholder="Phone number" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="spacing">
+                    <label for="email">Enter your email address(required)</label>
+                    <input class="inputs" type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="spacing">
+                    <label for="pasdsword">Enter a password(required)</label>
+                    <input class="inputs password-space" type="password" name="password" placeholder="Password" required>
+                </div>
+                <div>
+                    <label for="submit" class="promo"><a href="#">Add a promo code</a></label>
+                    <input id="submit" type="submit" value="Submit" placeholder="Sign Up" required>
+                    <label class="terms">By clicking "sign up", you agree to Uber's <a href="https://www.uber.com/legal/terms/ug/">Terms of Use</a> and acknowledge you have read the <a href="https://privacy.uber.com/policy/">Privacy policy</a>.</label>
+                </div>
+            </section>
+        </form>
+    </div>
+</body>
+
+</html>
