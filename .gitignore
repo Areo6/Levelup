@@ -4,4 +4,4 @@
 .nfs*
 .fuse_hidden*
 venv/
-__pycash__/
+.__pycash__/

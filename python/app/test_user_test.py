@@ -19,11 +19,24 @@ class UserTest(unittest.TestCase):
         self.assertRaises(TypeError ,self.user.add_firstname(firstname), "Type error raised")
     
     def test_add_surname_if_returns_type_string(self):
-        
         surname = []
         with self.assertRaises(TypeError):
              self.user.surname(surname)
 
+    def test_add_phone_number_argument_is_integer(self):
+        phone = 1
+        self.assertRaises(TypeError, self.user.add_phone_number(phone))
+
+    def test_add_email_is_in_valid_string_format(self):
+        email = "eubule@gmail.com"
+        with self.assertRaises(TypeError):
+             self.user.email(email)
+        self.assertIn("@", email)
+        self.assertIn(".", email)
+
+    def test_password_is_not_null(self):
+        password = " "
+        self.assertNotEqual(self.user.add_password(password), "")
 
 
 if __name__ == "__main__":
