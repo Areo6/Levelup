@@ -35,7 +35,7 @@ class UserTest(unittest.TestCase):
         self.assertIn(".", email)
 
     def test_password_is_not_null(self):
-        password = " "
+        password = "Eric"
         self.assertNotEqual(self.user.add_password(password), "")
 
 
