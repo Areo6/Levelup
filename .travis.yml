@@ -7,9 +7,8 @@ install:
 
 # command to run tests
 script:
-  - nosetests python/app/test_user_test.py
+  - nosetests python/app/test_user_test.py --with-coverage --cover-tests
   - python python/app/user.py
-  - sbt clean coverage test
 
 after_success:
-  - sbt coveralls
+  - coveralls
