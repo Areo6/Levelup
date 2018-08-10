@@ -91,6 +91,7 @@ if __name__ == "__main__":
     user = User()
     user.set_firstname("Malaba")
     user.set_surname("Mashauri")
+    user.set_phone_number(7512)
     user.set_email("eubule@gmail.com")
     user.set_password("my_pass")
     user.view_user() 

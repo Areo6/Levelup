@@ -7,3 +7,4 @@ install:
 # command to run tests
 script:
   - nosetests python/app/test_user_test.py
+  - python python/app/user.py
