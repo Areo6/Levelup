@@ -4,7 +4,12 @@ python:
   - "3.5.2"
 install:
   - pip install -r requirements.txt
+
 # command to run tests
 script:
   - nosetests python/app/test_user_test.py
   - python python/app/user.py
+  - sbt clean coverage test
+
+after_success:
+  - sbt coveralls
